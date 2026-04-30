@@ -46,47 +46,47 @@ export default function Skills() {
   }, []);
 
   return (
-    <section id="skills" className="py-16 px-4 sm:px-6 lg:px-8 relative">
+    <section id="skills" className="section-padding relative">
       {/* Decorative gradient */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-5 blur-[150px] pointer-events-none"
         style={{ background: 'radial-gradient(circle, var(--color-neon-purple), transparent)' }} />
 
       <div className="max-w-6xl mx-auto relative z-10" ref={sectionRef}>
-        <div className="reveal text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
-            My Skills
+        <div className="reveal">
+          <h2 className="section-title">
+            <span className="gradient-text">My Skills</span>
           </h2>
-          <p className="text-white/50 text-sm sm:text-base max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Expertise spanning development, security, video production, and design.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-6">
           {skills.map((group, i) => {
             const Icon = iconMap[group.icon];
             return (
               <div
                 key={group.category}
-                className="glass p-5 sm:p-6 rounded-xl project-card group"
+                className="glass p-6 sm:p-7 rounded-2xl project-card group"
                 style={{ transitionDelay: `${i * 100}ms` }}
               >
-                <div className="flex items-center gap-3 mb-5">
+                <div className="flex items-center gap-4 mb-6">
                   {Icon && (
                     <div
-                      className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
+                      className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
                       style={{ background: `${group.color}15` }}
                     >
-                      <Icon size={18} style={{ color: group.color }} />
+                      <Icon size={20} style={{ color: group.color }} />
                     </div>
                   )}
                   <h3
-                    className="text-sm sm:text-base font-bold text-white"
+                    className="text-base sm:text-lg font-bold text-white"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {group.category}
                   </h3>
                 </div>
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {group.items.map((skill) => (
                     <SkillBar
                       key={skill.name}
