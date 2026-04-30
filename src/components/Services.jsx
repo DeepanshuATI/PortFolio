@@ -5,24 +5,24 @@ export default function Services() {
   const ref = useScrollReveal();
 
   return (
-    <section id="services" className="section-padding relative">
+    <section id="services" className="py-16 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto" ref={ref}>
-        <div className="reveal">
-          <h2 className="section-title">
-            <span className="gradient-text">Services</span>
+        <div className="reveal text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+            Services
           </h2>
-          <p className="section-subtitle">
+          <p className="text-white/50 text-sm sm:text-base max-w-2xl mx-auto">
             What I can do for you — from concept to deployment.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon];
             return (
               <div
                 key={service.title}
-                className="glass p-7 sm:p-8 rounded-2xl text-center group project-card relative overflow-hidden"
+                className="glass p-5 sm:p-6 rounded-xl text-center group project-card relative overflow-hidden"
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 {/* Top accent line */}
@@ -42,19 +42,19 @@ export default function Services() {
                 <div className="relative z-10">
                   {Icon && (
                     <div
-                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mx-auto mb-5 sm:mb-6 transition-transform duration-300 group-hover:scale-110"
+                      className="w-11 h-11 rounded-lg flex items-center justify-center mx-auto mb-4 transition-transform duration-300 group-hover:scale-110"
                       style={{ background: `${service.color}10`, border: `1px solid ${service.color}18` }}
                     >
-                      <Icon size={22} style={{ color: service.color }} />
+                      <Icon size={20} style={{ color: service.color }} />
                     </div>
                   )}
                   <h3
-                    className="text-sm sm:text-base font-bold text-white mb-3 sm:mb-4 group-hover:text-[var(--color-neon-blue)] transition-colors"
+                    className="text-xs sm:text-sm font-bold text-white mb-2 group-hover:text-[var(--color-neon-blue)] transition-colors"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {service.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-white/40 leading-relaxed">
+                  <p className="text-[0.7rem] sm:text-xs text-white/40 leading-relaxed">
                     {service.description}
                   </p>
                 </div>

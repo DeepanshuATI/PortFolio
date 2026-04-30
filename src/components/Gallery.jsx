@@ -28,26 +28,26 @@ export default function Gallery() {
   const ref = useScrollReveal();
 
   return (
-    <section id="gallery" className="section-padding relative">
+    <section id="gallery" className="py-16 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto" ref={ref}>
-        <div className="reveal">
-          <h2 className="section-title">
-            <span className="gradient-text">Design Portfolio</span>
+        <div className="reveal text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+            Design Portfolio
           </h2>
-          <p className="section-subtitle">
+          <p className="text-white/50 text-sm sm:text-base max-w-2xl mx-auto">
             UI screens, posters, thumbnails, and creative work.
           </p>
         </div>
 
         {/* Proper grid instead of CSS columns (avoids layout bugs) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {galleryItems.map((item, i) => {
-            const heights = ['220px', '280px', '250px', '200px', '300px', '240px'];
+            const heights = ['220px', '240px', '220px', '240px', '220px', '240px'];
             const accent = accentColors[i % accentColors.length];
             return (
               <div
                 key={item.id}
-                className="glass rounded-2xl overflow-hidden cursor-pointer group project-card"
+                className="glass rounded-xl overflow-hidden cursor-pointer group project-card"
                 onClick={() => setLightbox(item)}
               >
                 <div

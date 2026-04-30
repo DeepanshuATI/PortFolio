@@ -6,25 +6,25 @@ export default function Projects() {
   const ref = useScrollReveal();
 
   return (
-    <section id="projects" className="section-padding relative">
+    <section id="projects" className="py-16 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full opacity-5 blur-[120px] pointer-events-none"
         style={{ background: 'radial-gradient(circle, var(--color-neon-cyan), transparent)' }} />
 
       <div className="max-w-6xl mx-auto relative z-10" ref={ref}>
-        <div className="reveal">
-          <h2 className="section-title">
-            <span className="gradient-text">Projects</span>
+        <div className="reveal text-center mb-8">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold gradient-text mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+            Projects
           </h2>
-          <p className="section-subtitle">
+          <p className="text-white/50 text-sm sm:text-base max-w-2xl mx-auto">
             A showcase of my recent work — from security tools to creative platforms.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, i) => (
             <article
               key={project.title}
-              className="glass project-card p-7 sm:p-8 rounded-2xl flex flex-col group relative overflow-hidden"
+              className="glass project-card p-5 sm:p-6 rounded-xl flex flex-col group relative overflow-hidden"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
               {/* Hover gradient background */}
@@ -36,30 +36,30 @@ export default function Projects() {
               <div className="relative z-10 flex flex-col h-full">
                 {/* Color accent bar */}
                 <div
-                  className="h-0.5 w-10 rounded-full mb-6 transition-all duration-500 group-hover:w-full"
+                  className="h-0.5 w-8 rounded-full mb-4 transition-all duration-500 group-hover:w-full"
                   style={{ background: project.color }}
                 />
 
                 {/* Project number */}
                 <div
-                  className="text-[0.65rem] font-mono uppercase tracking-widest mb-2"
+                  className="text-[0.6rem] font-mono uppercase tracking-widest mb-1.5"
                   style={{ color: `${project.color}99` }}
                 >
                   Project {String(i + 1).padStart(2, '0')}
                 </div>
 
                 <h3
-                  className="text-base sm:text-lg font-bold text-white mb-3 group-hover:text-[var(--color-neon-blue)] transition-colors"
+                  className="text-sm sm:text-base font-bold text-white mb-2 group-hover:text-[var(--color-neon-blue)] transition-colors"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-white/45 leading-relaxed mb-5 flex-grow">
+                <p className="text-xs sm:text-sm text-white/45 leading-relaxed mb-4 flex-grow">
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 mb-4">
                   {project.tech.map((t) => (
                     <span
                       key={t}
