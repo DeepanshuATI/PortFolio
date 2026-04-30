@@ -69,7 +69,7 @@ export default function Hero() {
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             <span className="text-white">Hi, I'm </span>
-            <span className={`hero-d ${glitch ? 'hero-d-glitch' : ''}`} data-text="D">D</span>
+            <span className={`hero-d ${glitch ? 'hero-d-glitch' : ''}`} data-text="D">DaxterATI</span>
           </h1>
 
           {/* Tagline */}
